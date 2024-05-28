@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Comparison</title>
+</head>
+
+<body>
+
+    <label for="inputString">Input string: </label>
+    <input type="text" name="input-string" id="inputString" /><br><br>
+
+    <button type="button" onclick="getString()">Submit</button><br><br>
+
+    <span id="target"></span>
+
+
+    <script>
+        function getString() {
+            let sampleStringArray = ['p', 'y'];
+            let inputString = document.getElementById('inputString').value;
+            let inputStringArray = [];
+            let target = document.getElementById('target');
+
+            for (let i = 0; i < inputString.length; i++) {
+                inputStringArray.push(inputString.charAt(i));
+            }
+
+            let x = 0;
+
+            if (inputStringArray[x] === sampleStringArray[x] && inputStringArray[x + 1] === sampleStringArray[x + 1]) {
+                target.innerHTML = inputString;
+            } else {
+                inputStringArray = sampleStringArray.join('') + inputString;
+                target.innerHTML = inputStringArray;
+            }
+        }
+    </script>
+</body>
+
+</html>
